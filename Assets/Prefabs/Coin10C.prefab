@@ -135,6 +135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationOnTriggerEnter: {fileID: 5691593524744587622, guid: 1b6cbf0da9c72054c9057df7edef271d, type: 3}
+  _energyAmount: 0
+  _healthAmount: 0
+  _moneyAmount: 0.1
 --- !u!58 &8160353569364503855
 CircleCollider2D:
   m_ObjectHideFlags: 0

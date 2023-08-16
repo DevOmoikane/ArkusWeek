@@ -17,7 +17,7 @@ public class LoopGround : MonoBehaviour {
 
     private void Update() {
         float delta = _speed * Time.deltaTime;
-        Score.instance.UpdateDistance(delta);
+        Score.instance.IncrementDistance(delta);
         _spriteRenderer.size = new Vector2(_spriteRenderer.size.x + delta, _spriteRenderer.size.y);
         if (_spriteRenderer.size.x > _width) {
             _spriteRenderer.size = _startSize;

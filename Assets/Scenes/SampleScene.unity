@@ -823,6 +823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentDistanceText: {fileID: 0}
+  _initialEnergy: 0
+  _maxHealth: 100
 --- !u!1 &1080880473
 GameObject:
   m_ObjectHideFlags: 0
