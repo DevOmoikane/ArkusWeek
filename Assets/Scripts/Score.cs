@@ -8,7 +8,7 @@ public class Score : MonoBehaviour {
 
     [SerializeField] private TextMeshProUGUI _currentDistanceText;
 
-    private int _currentDistance;
+    private float _currentDistance = 0f;
     private int _currentEnergy;
     private int _currentHealth;
 
@@ -22,6 +22,14 @@ public class Score : MonoBehaviour {
         if (_currentDistanceText != null) {
             _currentDistanceText.text = _currentDistance.ToString();
         }
+    }
+
+    public void ResetDistance() {
+        _currentDistance = 0f;
+    }
+
+    public void UpdateDistance(float delta) {
+        _currentDistance += delta;
     }
 
 }
