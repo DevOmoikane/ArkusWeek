@@ -6,8 +6,8 @@ public class ObjectTrigger : MonoBehaviour {
 
     [SerializeField] private GameObject _animationOnTriggerEnter;
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Player")) {
+    private void OnTriggerEnter2D(Collider2D collider) {
+        if (collider.gameObject.CompareTag("Player")) {
             if (_animationOnTriggerEnter!= null)
             {
                 Instantiate(_animationOnTriggerEnter, transform.position, Quaternion.identity);
