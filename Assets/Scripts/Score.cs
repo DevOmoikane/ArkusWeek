@@ -7,6 +7,7 @@ public class Score : MonoBehaviour {
     public static Score instance;
 
     [SerializeField] private TextMeshProUGUI _currentDistanceText;
+    [SerializeField] private TextMeshProUGUI _currentMoneyText;
     [SerializeField] private float _initialEnergy = 0f;
     [SerializeField] private float _maxHealth = 100f;
 
@@ -25,6 +26,9 @@ public class Score : MonoBehaviour {
         if (_currentDistanceText != null) {
             _currentDistanceText.text = _currentDistance.ToString();
         }
+        if (_currentMoneyText != null) {
+            _currentMoneyText.text = "$" + _currentMoney.ToString();
+        }
         ResetScore();
     }
 
@@ -37,6 +41,9 @@ public class Score : MonoBehaviour {
 
     public void IncrementDistance(float delta) {
         _currentDistance += delta;
+        if (_currentDistanceText != null) {
+            _currentDistanceText.text = Mathf.FloorToInt(_currentDistance).ToString() + "m";
+        }
     }
 
     public void UpdateHealth(float delta) {
@@ -49,6 +56,9 @@ public class Score : MonoBehaviour {
 
     public void UpdateMoney(float amount) {
         _currentMoney += amount;
+        if (_currentMoneyText != null) {
+            _currentMoneyText.text = _currentMoney.ToString("C2");
+        }
     }
 
 }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using CodeMonkey;
+using CodeMonkey.Utils;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance;

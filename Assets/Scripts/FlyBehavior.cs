@@ -14,7 +14,7 @@ public class FlyBehavior : MonoBehaviour {
     }
 
     private void Update() {
-        if (Mouse.current.leftButton.wasPressedThisFrame) {
+        if (Mouse.current.leftButton.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame) {
             _rb.velocity = Vector2.up * _velocity;
         }
     }
