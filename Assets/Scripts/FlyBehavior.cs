@@ -9,14 +9,29 @@ public class FlyBehavior : MonoBehaviour {
 
     private Rigidbody2D _rb;
 
+    private InputManager inputManager;
+
+    private void Awake() {
+        inputManager = InputManager.Instance;
+    }
+
+    private void OnEnable() {
+        inputManager.OnTouchAction += Jump;
+    }
+
+    private void OnDisable() {
+        inputManager.OnTouchAction -= Jump;
+    }
+
     private void Start() {
         _rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update() {
-        if (Mouse.current.leftButton.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame) {
-            _rb.velocity = Vector2.up * _velocity;
-        }
+    }
+
+    private void Jump() {
+        _rb.velocity = Vector2.up * _velocity;
     }
 
     private void FixedUpdate() {
